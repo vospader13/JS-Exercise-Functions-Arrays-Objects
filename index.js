@@ -64,10 +64,11 @@ makePersonObject(4, "justin", "ju@jm.com");
  * the returned value should look like `Hello, my name is Leia`.
 */
 function getName(name) { 
-
-  return "Hello, my name is "  + name;
+    
+        return `Hello my name is ${name}`;    
+   
 }
-getName("Luke");
+getName();
 /**
  * ### Challenge `makeSmartPerson`
  * 
@@ -81,18 +82,22 @@ getName("Luke");
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(name, num1, num2) {
+function makeSmartPerson(name) {
   /* code here */
-  function sum(){
-   return num1+num2;
+    const smart = {
+        name: name,
+        sum: function (num1, num2){
+          return num1 + num2
+        },
+      speak: function(){
+        return `Hello my name is ${name}`;
+      }
+    }
+    return smart; 
   };
-  return{
-    name: name,
-    sum: sum,
-    speak: `"Hello, my name is " + ${name}`
-  }
-};
-makeSmartPerson;
+ 
+
+makeSmartPerson();
 /**
  * ### Challenge `getCarInfoByIndex`
  * 
@@ -105,9 +110,9 @@ makeSmartPerson;
  * For example, if getCarInfoByIndex is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoByIndex(id) {
+function getCarInfoByIndex(array, i) {
   /* code here */
-  return "This is a "+ {car_make} + {car_model};
+  return array[i] + array[i];
 }
 getCarInfoByIndex;
 /**
